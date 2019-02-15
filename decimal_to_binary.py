@@ -8,6 +8,7 @@ e.g. 13 --- 1011;
 
 #: convert number to its binary bits.
 def get_bits_in_list(num):
+    """ Convert a decimal number into a list of binary bits."""
     list_of_bits = list()
     while True:
         rem = num % 2
@@ -19,18 +20,20 @@ def get_bits_in_list(num):
 
 
 #: change bits to proper binary format.
-def bits_to_binary(list):
+def bits_to_binary(list_of_bits):
+    """Takes a list of binary bits and join them to forma binary string."""
     binary = ''
-    for num in list:
+    for num in list_of_bits:
         if num != 0:
             binary = binary + str(num)
         else:
             binary = binary + '0'
-    return(binary)
+    return binary
 
 
 #: to test the binary conversion.
 def main():
+    """main to to check all functions and behaviors."""
     num = int(input("Enter Number to convert to binary : "))
     list1 = get_bits_in_list(num)
     print(bits_to_binary(list1))
